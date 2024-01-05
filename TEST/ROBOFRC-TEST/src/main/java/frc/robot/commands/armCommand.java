@@ -8,7 +8,7 @@ public class armCommand extends CommandBase {
         tread.motor1ks = 1; //whatever value to make it "slow"
         tread.motor1v = 1; 
         SoftwareArmRoller armRoller = new SoftwareArmRoller();
-        armRoller.intakeBall();
+        armRoller.storeBall();
     }
     
     @Override
@@ -16,10 +16,17 @@ public class armCommand extends CommandBase {
         spinMotorSlow();
     }
 
- 
 
+}
 
-
+public class armCommandFast extends CommandBase { 
+    public spinMotorFast() {
+        Tread tread = new Tread();
+        tread.motor1ks = 2; //whatever value to make it "fast"
+        tread.motor1v = 2; 
+        SoftwareArmRoller armRoller = new SoftwareArmRoller();
+        armRoller.intakeBall();
+    }
 }
     
 
